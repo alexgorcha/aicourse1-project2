@@ -2122,6 +2122,32 @@ body.layout-c .layout-a-only, body.layout-c .layout-b-only { display: none !impo
   max-width: 360px;
 }
 
+.teddy-container-dtc .teddy-glowing-heart-pulse {
+  bottom: 36%;
+  left: 47%;
+  width: 21px;
+  height: 21px;
+  animation-name: pulse-heart-dtc;
+}
+
+@keyframes pulse-heart-dtc {
+  0% {
+    transform: translateX(-50%) scale(0.9);
+    box-shadow: 0 0 0 0 rgba(var(--accent-heart-rgb), 0.45);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateX(-50%) scale(1.05);
+    box-shadow: 0 0 12px 5px rgba(var(--accent-heart-rgb), 0.28);
+    opacity: 0.78;
+  }
+  100% {
+    transform: translateX(-50%) scale(0.9);
+    box-shadow: 0 0 0 0 rgba(var(--accent-heart-rgb), 0);
+    opacity: 0.5;
+  }
+}
+
 .dtc-price-tag-badge {
   position: absolute;
   top: 24px;
