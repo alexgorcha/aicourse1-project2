@@ -58,7 +58,10 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
     localStorage.setItem('koda-theme', themeName);
-    updateSimulatorGlow(themeName, document.querySelector('.sim-btn.active').dataset.mode);
+    const activeSimBtn = document.querySelector('.sim-btn.active');
+    if (activeSimBtn) {
+      updateSimulatorGlow(themeName, activeSimBtn.dataset.mode);
+    }
   }
 
   // Hook Theme clicks
@@ -69,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Switch Layout Function
-  function switchLayout(layoutName) {
+  function switchLayout(layoutName, shouldScrollToTop = false) {
     document.body.classList.remove('layout-a', 'layout-b', 'layout-c');
     document.body.classList.add(`layout-${layoutName}`);
     layoutOptionBtns.forEach(btn => {
@@ -81,11 +84,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     localStorage.setItem('koda-layout', layoutName);
     
-    // Throw the user back to the very top of the page
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
+    if (shouldScrollToTop) {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
     
     // Refresh Scroll Trigger for Sticky Bottom Bar in the new layout
     window.dispatchEvent(new Event('scroll'));
@@ -94,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Hook Layout clicks
   layoutOptionBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      switchLayout(btn.dataset.layout);
+      switchLayout(btn.dataset.layout, true);
     });
   });
 
@@ -277,9 +281,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   // Auto-rotate use case stories every 8 seconds for a lively look
   let activeUseCaseIndex = 0;
-  let useCaseInterval = setInterval(rotateUseCase, 8000);
+  let useCaseInterval = prefersReducedMotion ? null : setInterval(rotateUseCase, 8000);
 
   function rotateUseCase() {
     activeUseCaseIndex = (activeUseCaseIndex + 1) % usecaseBtns.length;
@@ -289,7 +295,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // Clear interval on user click to prevent annoying transitions during reading
   const usecaseSection = document.getElementById('usecases');
   usecaseSection.addEventListener('click', () => {
-    clearInterval(useCaseInterval);
+    if (useCaseInterval) {
+      clearInterval(useCaseInterval);
+      useCaseInterval = null;
+    }
   });
 
 
@@ -365,16 +374,37 @@ document.addEventListener('DOMContentLoaded', () => {
   const successScreen = document.getElementById('modal-success-screen');
   const successName = document.getElementById('success-name');
   const successEmail = document.getElementById('success-email');
+  const focusableModalSelectors = [
+    'a[href]',
+    'button:not([disabled])',
+    'input:not([disabled])',
+    'select:not([disabled])',
+    'textarea:not([disabled])',
+    '[tabindex]:not([tabindex="-1"])'
+  ].join(',');
+  let lastFocusedElement = null;
+
+  function getFocusableModalElements() {
+    return Array.from(preorderModal.querySelectorAll(focusableModalSelectors))
+      .filter(element => element.offsetParent !== null);
+  }
 
   // Open Modal function
   function openModal() {
+    lastFocusedElement = document.activeElement;
     preorderModal.classList.add('active');
+    preorderModal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden'; // Stop page scrolling
+    const focusTarget = preorderModal.querySelector('#form-name') || getFocusableModalElements()[0];
+    if (focusTarget) {
+      focusTarget.focus();
+    }
   }
 
   // Close Modal function
   function closeModal() {
     preorderModal.classList.remove('active');
+    preorderModal.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = ''; // Resume scrolling
     // Reset modal screens after animation closes
     setTimeout(() => {
@@ -382,6 +412,9 @@ document.addEventListener('DOMContentLoaded', () => {
       successScreen.style.display = 'none';
       preorderForm.reset();
     }, 400);
+    if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+      lastFocusedElement.focus();
+    }
   }
 
   // Bind Open Buttons
@@ -400,6 +433,29 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  preorderModal.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeModal();
+      return;
+    }
+
+    if (e.key !== 'Tab') return;
+
+    const focusableElements = getFocusableModalElements();
+    if (focusableElements.length === 0) return;
+
+    const firstElement = focusableElements[0];
+    const lastElement = focusableElements[focusableElements.length - 1];
+
+    if (e.shiftKey && document.activeElement === firstElement) {
+      e.preventDefault();
+      lastElement.focus();
+    } else if (!e.shiftKey && document.activeElement === lastElement) {
+      e.preventDefault();
+      firstElement.focus();
+    }
+  });
+
   // Handle preorder submission
   preorderForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -413,13 +469,16 @@ document.addEventListener('DOMContentLoaded', () => {
     
     signupScreen.style.display = 'none';
     successScreen.style.display = 'block';
+    const doneButton = successScreen.querySelector('button');
+    if (doneButton) {
+      doneButton.focus();
+    }
   });
 
   // ==========================================
   // 7. STICKY BOTTOM CTA BAR CONTROLLER
   // ==========================================
   const stickyBar = document.getElementById('sticky-bottom-bar');
-  const ctaSection = document.querySelector('.cta-banner'); // Standard Bottom CTA
 
   const getActiveHeroHeight = () => {
     const heroA = document.getElementById('hero-a');
@@ -433,11 +492,22 @@ document.addEventListener('DOMContentLoaded', () => {
     return 600; // Default fallback
   };
 
-  if (stickyBar && ctaSection) {
-    window.addEventListener('scroll', () => {
+  const getActiveCtaSection = () => {
+    if (document.body.classList.contains('layout-a')) return document.querySelector('.cta-banner');
+    if (document.body.classList.contains('layout-b')) return document.querySelector('.cta-banner-wellness');
+    if (document.body.classList.contains('layout-c')) return document.querySelector('.pricing-dtc');
+    return null;
+  };
+
+  function updateStickyBarVisibility() {
+    if (!stickyBar) return;
+
       const heroHeight = getActiveHeroHeight();
       const scrollPos = window.scrollY;
-      const ctaTop = ctaSection.getBoundingClientRect().top + window.scrollY;
+      const activeCtaSection = getActiveCtaSection();
+      const ctaTop = activeCtaSection
+        ? activeCtaSection.getBoundingClientRect().top + window.scrollY
+        : document.documentElement.scrollHeight;
       const windowHeight = window.innerHeight;
 
       // Show bar after scrolling past active hero section, but hide when reaching bottom CTA section
@@ -446,7 +516,12 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         stickyBar.classList.remove('visible');
       }
-    });
+  }
+
+  if (stickyBar) {
+    window.addEventListener('scroll', updateStickyBarVisibility);
+    window.addEventListener('resize', updateStickyBarVisibility);
+    updateStickyBarVisibility();
   }
 
   // ==========================================
@@ -465,6 +540,10 @@ document.addEventListener('DOMContentLoaded', () => {
       signupScreen.style.display = 'none';
       successScreen.style.display = 'block';
       openModal();
+      const doneButton = successScreen.querySelector('button');
+      if (doneButton) {
+        doneButton.focus();
+      }
     });
   }
 
@@ -485,20 +564,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Close menu when a link is clicked
-    navLinksList.forEach(link => {
-      link.addEventListener('click', () => {
+    const closeMobileMenu = () => {
         navLinksContainer.classList.remove('active');
         mobileToggle.textContent = '☰';
         mobileToggle.classList.remove('active');
-      });
+    };
+
+    navLinksList.forEach(link => {
+      link.addEventListener('click', closeMobileMenu);
+    });
+
+    navLinksContainer.querySelectorAll('.open-preorder-btn').forEach(btn => {
+      btn.addEventListener('click', closeMobileMenu);
     });
 
     // Close menu when clicking outside of it
     document.addEventListener('click', (e) => {
       if (!navLinksContainer.contains(e.target) && e.target !== mobileToggle) {
-        navLinksContainer.classList.remove('active');
-        mobileToggle.textContent = '☰';
-        mobileToggle.classList.remove('active');
+        closeMobileMenu();
       }
     });
   }
