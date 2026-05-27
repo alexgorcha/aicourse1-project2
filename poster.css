@@ -1,0 +1,415 @@
+/* Modern Premium Infographic Style Guide for Koda AI (High Readability) */
+
+/* Reset & Core Setup */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #050403;
+  color: #f4efe9;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  overflow: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 2000x2000 Container */
+.poster-container {
+  width: 2000px;
+  height: 2000px;
+  max-width: 2000px;
+  max-height: 2000px;
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto;
+  background: radial-gradient(circle at 50% 30%, #150f0c 0%, #060504 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 85px 100px;
+  box-sizing: border-box;
+}
+
+/* Background Glowing Orbs */
+.glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(150px);
+  z-index: 1;
+}
+
+.orb-1 {
+  width: 900px;
+  height: 900px;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(217, 119, 6, 0.1) 0%, rgba(217, 119, 6, 0) 70%);
+}
+
+.orb-2 {
+  width: 700px;
+  height: 700px;
+  bottom: 200px;
+  left: 100px;
+  background: radial-gradient(circle, rgba(161, 98, 7, 0.06) 0%, rgba(161, 98, 7, 0) 70%);
+}
+
+.orb-3 {
+  width: 600px;
+  height: 600px;
+  bottom: 100px;
+  right: 150px;
+  background: radial-gradient(circle, rgba(120, 53, 15, 0.08) 0%, rgba(120, 53, 15, 0) 70%);
+}
+
+/* Header Styles */
+.poster-header {
+  text-align: center;
+  position: relative;
+  z-index: 10;
+  margin-bottom: 10px;
+}
+
+.poster-header .category {
+  font-family: 'Outfit', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #f59e0b;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  text-shadow: 0 0 12px rgba(245, 158, 11, 0.25);
+}
+
+.poster-header .title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 130px;
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: 0.05em;
+  background: linear-gradient(135deg, #ffffff 40%, #fbbf24 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.poster-header .subtitle {
+  font-size: 34px;
+  font-weight: 300;
+  color: #b8a698;
+  margin: 16px 0 0 0;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Main Body Section */
+.poster-body {
+  height: 980px;
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Central Bear Container */
+.bear-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 780px;
+  height: 780px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.bear-frame-glow {
+  position: absolute;
+  width: 580px;
+  height: 580px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(217, 119, 6, 0.18) 0%, rgba(217, 119, 6, 0) 70%);
+  filter: blur(55px);
+  z-index: 4;
+}
+
+.bear-frame {
+  width: 680px;
+  height: 680px;
+  border-radius: 50%;
+  position: relative;
+  background: radial-gradient(circle, rgba(25, 20, 18, 0.52) 0%, rgba(8, 7, 6, 0.98) 100%);
+  border: 2.5px solid rgba(217, 119, 6, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  box-shadow: 
+    0 45px 95px rgba(0, 0, 0, 0.8),
+    inset 0 0 50px rgba(217, 119, 6, 0.12);
+  backdrop-filter: blur(15px);
+  z-index: 5;
+}
+
+.bear-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(5, 4, 3, 0) 0 44%, rgba(5, 4, 3, 0.2) 63%, rgba(5, 4, 3, 0.72) 100%),
+    linear-gradient(180deg, rgba(5, 4, 3, 0.04), rgba(5, 4, 3, 0.3));
+  box-shadow: inset 0 0 85px rgba(5, 4, 3, 0.82);
+  z-index: 6;
+}
+
+.bear-img {
+  position: relative;
+  width: 705px;
+  height: 882px;
+  object-fit: cover;
+  object-position: center 24%;
+  border-radius: 50%;
+  filter: saturate(1.04) contrast(1.03);
+  z-index: 5;
+}
+
+/* Callout Column Styles */
+.side-column {
+  position: absolute;
+  width: 530px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 40px 0;
+  z-index: 20;
+}
+
+.left-column {
+  left: 0;
+}
+
+.right-column {
+  right: 0;
+}
+
+/* Glassmorphic Callout Cards */
+.card {
+  background: rgba(22, 17, 15, 0.75);
+  border: 1.5px solid rgba(217, 119, 6, 0.18);
+  border-radius: 36px;
+  padding: 45px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 
+    0 25px 60px rgba(0, 0, 0, 0.5),
+    inset 0 1px 2px rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(25px);
+}
+
+.card-glow {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(217, 119, 6, 0.05) 0%, rgba(217, 119, 6, 0) 60%);
+  pointer-events: none;
+}
+
+.card h3 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 16px 0;
+  letter-spacing: 0.02em;
+}
+
+.card p {
+  font-size: 24px;
+  line-height: 1.6;
+  color: #d7cdbf;
+  margin: 0;
+  font-weight: 300;
+}
+
+/* Badges */
+.badge {
+  display: inline-block;
+  font-family: 'Outfit', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  padding: 7px 16px;
+  border-radius: 100px;
+  background: rgba(217, 119, 6, 0.12);
+  border: 1px solid rgba(217, 119, 6, 0.3);
+  color: #f59e0b;
+  margin-bottom: 22px;
+  text-transform: uppercase;
+}
+
+.badge.red-badge {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.28);
+  color: #f87171;
+}
+
+.badge.gold-badge {
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.28);
+  color: #fbbf24;
+}
+
+/* Pointer Lines SVGs Overlay */
+.pointer-lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 15;
+  opacity: 0.96;
+}
+
+/* Everyday Support Section */
+.modes-section {
+  position: relative;
+  z-index: 10;
+  margin-top: 60px;
+  margin-bottom: 10px;
+}
+
+.modes-section .section-title {
+  text-align: center;
+  font-family: 'Outfit', sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: #f59e0b;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 50px;
+}
+
+.modes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+}
+
+.mode-card {
+  background: rgba(18, 14, 12, 0.55);
+  border: 1.5px solid rgba(255, 255, 255, 0.05);
+  border-radius: 32px;
+  padding: 45px 40px;
+  text-align: center;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.mode-icon-container {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(217, 119, 6, 0.14) 0%, rgba(217, 119, 6, 0.02) 100%);
+  border: 1.5px solid rgba(217, 119, 6, 0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 28px auto;
+}
+
+.mode-icon {
+  width: 44px;
+  height: 44px;
+  color: #f59e0b;
+}
+
+.mode-card h4 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 38px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 18px 0;
+}
+
+.mode-card p {
+  font-size: 26px;
+  line-height: 1.55;
+  color: #c7bdb2;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Footer & Credits Section */
+.poster-footer {
+  position: relative;
+  z-index: 10;
+  margin-top: 10px;
+}
+
+.credit-divider {
+  height: 1px;
+  background: linear-gradient(90deg, rgba(217, 119, 6, 0) 0%, rgba(217, 119, 6, 0.25) 50%, rgba(217, 119, 6, 0) 100%);
+  margin-bottom: 50px;
+}
+
+.credits {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  width: 100%;
+  gap: 0;
+}
+
+.credit-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+}
+
+.credit-item.border-left {
+  border-left: 1.5px solid rgba(255, 255, 255, 0.08);
+  padding-left: 0;
+}
+
+.credit-item .label {
+  font-family: 'Outfit', sans-serif;
+  font-size: 27px;
+  font-weight: 600;
+  color: #9b9187;
+  letter-spacing: 0.25em;
+  margin-bottom: 14px;
+}
+
+.credit-item .value {
+  font-family: 'Outfit', sans-serif;
+  font-size: 34px;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.credit-item .engine {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 400;
+  color: #c4b8ad;
+  font-size: 25px;
+  margin-left: 12px;
+}

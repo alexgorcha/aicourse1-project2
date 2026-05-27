@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Koda | AI Teddy Support Companion</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Meet Koda, a comforting, soft AI-powered teddy companion designed to support emotional well-being, routines, safety, and bedtime wind-down. 100% privacy-first and camera-free.">
+  <meta name="keywords" content="AI companion, support bear, smart teddy, emotional wellbeing, sleep routine, anxiety relief, privacy-first AI, connected toy">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Koda | AI Teddy Support Companion">
+  <meta property="og:description" content="A warm, comforting AI plush companion that helps you feel heard, reminded, and reassured. Camera-free with a physical privacy button.">
+  <meta property="og:image" content="product_design_images/05-modern-support-bear-classic-brown-happy-eyes.png">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="Koda | AI Teddy Support Companion">
+  <meta property="twitter:description" content="A warm, comforting AI plush companion that helps you feel heard, reminded, and reassured. Camera-free with a physical privacy button.">
+  <meta property="twitter:image" content="product_design_images/05-modern-support-bear-classic-brown-happy-eyes.png">
+
+  <!-- Preload Styling for INP and LCP performance -->
+  <link rel="preload" href="index.css" as="style">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body class="theme-cocoa layout-a">
+
+  <!-- ==========================================
+       NAVIGATION BAR (Shared)
+       ========================================== -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#" class="logo" id="nav-logo">
+        <div class="logo-icon"></div>
+        <span>Koda</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#simulator" class="nav-link" id="link-simulator">Expressions</a>
+        <a href="#privacy" class="nav-link" id="link-privacy">Privacy</a>
+        <a href="#safety" class="nav-link" id="link-safety">Safety</a>
+        <a href="#faq" class="nav-link" id="link-faq">FAQ</a>
+        <button class="btn-primary open-preorder-btn mobile-menu-cta" style="margin-top: 8px; width: 100%;">Pre-Order Now</button>
+      </nav>
+      <button class="btn-primary nav-cta open-preorder-btn" id="btn-nav-cta">Pre-Order</button>
+      <button class="nav-mobile-toggle" id="btn-mobile-toggle" aria-label="Toggle Menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    
+    <!-- ==========================================
+         LAYOUT A ONLY: THE STORYTELLER
+         ========================================== -->
+    
+    <!-- Hero A -->
+    <section class="hero layout-a-only" id="hero-a">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="section-tag" id="hero-tag">Gentle Companion Intelligence</span>
+          <h1 class="hero-headline" id="hero-title">Warmth you can feel.<br>Intelligence that understands.</h1>
+          <p class="hero-description" id="hero-desc">
+            Koda is a soft, comforting AI-powered companion designed for your emotional well-being, routines, and peace of mind. Warm enough to hug, expressive enough to reassure, and 100% camera-free for absolute privacy.
+          </p>
+          <div class="hero-actions">
+            <button class="btn-primary open-preorder-btn" id="btn-hero-primary">Pre-Order Now</button>
+            <a href="#simulator" class="btn-secondary" id="btn-hero-secondary">Explore Expressions</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <h3 id="stat-privacy">100%</h3>
+              <p>Camera-Free Privacy</p>
+            </div>
+            <div class="stat-item">
+              <h3 id="stat-safety">ASTM</h3>
+              <p>Toy Safety Certified</p>
+            </div>
+            <div class="stat-item">
+              <h3 id="stat-fabric">Premium</h3>
+              <p>Huggable Fabric</p>
+            </div>
+          </div>
+        </div>
+        <div class="hero-media-wrapper">
+          <div class="hero-glowing-backdrop"></div>
+          <div class="teddy-container">
+            <img src="product_design_images/05-modern-support-bear-classic-brown-happy-eyes.png" alt="Koda: The Modern Support Bear in Classic Brown" class="teddy-hero-image" id="hero-teddy-img">
+            <div class="teddy-glowing-heart-pulse" id="hero-heart-pulse"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lifestyle Use Cases A -->
+    <section class="usecases layout-a-only" id="usecases">
+      <div class="container">
+        <span class="section-tag">Everyday Moments</span>
+        <h2 class="section-title">Support Throughout the Day</h2>
+        <p class="section-subtitle">From busy mornings to stressful afternoons and relaxing bedtimes, Koda integrates seamlessly into your environment as a soothing comfort anchor.</p>
+        
+        <div class="usecase-layout">
+          <div class="usecase-selectors">
+            <button class="usecase-btn active" data-index="0" id="btn-usecase-0">
+              <h3 class="usecase-btn-title">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v2M4.93 4.93l1.41 1.41M20 12h2M17.66 6.34l1.41-1.41M12 20v2M6.34 17.66l-1.41 1.41M2 12h2M19.07 19.07l-1.41-1.41"></path></svg>
+                Weather Awareness
+              </h3>
+              <p class="usecase-btn-summary">Gentle weather prompts before you head out.</p>
+            </button>
+            
+            <button class="usecase-btn" data-index="1" id="btn-usecase-1">
+              <h3 class="usecase-btn-title">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5-2 4-2 4 2 4 2M9 9h.01M15 9h.01"></path></svg>
+                Stress & Breathing Support
+              </h3>
+              <p class="usecase-btn-summary">Guided breathing rhythms for a quick reset.</p>
+            </button>
+            
+            <button class="usecase-btn" data-index="2" id="btn-usecase-2">
+              <h3 class="usecase-btn-title">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                Bedtime Wind-Down
+              </h3>
+              <p class="usecase-btn-summary">Evening routines and quiet soundscapes.</p>
+            </button>
+            
+            <button class="usecase-btn" data-index="3" id="btn-usecase-3">
+              <h3 class="usecase-btn-title">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                Home Reassurance
+              </h3>
+              <p class="usecase-btn-summary">Gentle environmental and safety checks.</p>
+            </button>
+          </div>
+          
+          <div class="usecase-display">
+            <!-- Slide 1 -->
+            <div class="usecase-slide active" data-slide="0">
+              <img src="product_design_images/06-lifestyle-weather-rain-alert.png" alt="Koda showing weather rain alert" class="usecase-img">
+              <div class="usecase-info-overlay">
+                <h4 class="usecase-info-title">Gentle Weather Prompts</h4>
+                <p class="usecase-info-desc">Before leaving home, Koda's display glows softly with a weather warning icon—like a rain cloud—reminding you to pack an umbrella without noisy device chimes.</p>
+              </div>
+            </div>
+            
+            <!-- Slide 2 -->
+            <div class="usecase-slide" data-slide="1">
+              <img src="product_design_images/08-lifestyle-work-stress-breathing.png" alt="Breathing support with Koda during a stressful workday" class="usecase-img">
+              <div class="usecase-info-overlay">
+                <h4 class="usecase-info-title">Guided Calming Waves</h4>
+                <p class="usecase-info-desc">During stressful work moments, Koda displays calm, sleeping closed eyes and slow, glowing chest waves. By matching your breathing to the glowing pattern, you can enjoy a gentle emotional reset.</p>
+              </div>
+            </div>
+            
+            <!-- Slide 3 -->
+            <div class="usecase-slide" data-slide="2">
+              <img src="product_design_images/09-lifestyle-bedtime-sleepy-display.png" alt="Bedtime wind down with Koda" class="usecase-img">
+              <div class="usecase-info-overlay">
+                <h4 class="usecase-info-title">Bedtime Routines & Wind-Down</h4>
+                <p class="usecase-info-desc">During your evening wind-down, Koda displays sleepy eyes and a night star. Koda supports decompression with sleep readiness prompts, quiet bedtime journaling prompts, or gentle ambient soundscapes.</p>
+              </div>
+            </div>
+            
+            <!-- Slide 4 -->
+            <div class="usecase-slide" data-slide="3">
+              <img src="product_design_images/07-lifestyle-security-worried-eyes.png" alt="Home security concern alert shown on Koda's screen" class="usecase-img">
+              <div class="usecase-info-overlay">
+                <h4 class="usecase-info-title">Gentle Safety Reminders</h4>
+                <p class="usecase-info-desc">In the evening, Koda sits as a comforting guardian. If connected to a security sensor, Koda displays subtle worried eyes to signal an unlocked door or an open window—alerting you calmly, without creating panic.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visual Gallery A -->
+    <section class="gallery layout-a-only" id="gallery">
+      <div class="container">
+        <span class="section-tag">Craftsmanship</span>
+        <h2 class="section-title">The Design Journey</h2>
+        <p class="section-subtitle">We designed five distinct visual variations, balancing classic plush toy appeal, modern digital simplicity, and therapeutic presence, before finding Koda's perfect balance.</p>
+        
+        <div class="gallery-carousel-wrapper">
+          <div class="gallery-carousel" id="design-carousel">
+            <!-- Slide 1: Concept 1 -->
+            <div class="gallery-card" id="card-concept-1">
+              <div class="gallery-img-box">
+                <span class="gallery-tag">Stage 1</span>
+                <img src="product_design_images/01-calm-bedtime-companion.png" alt="Concept 1: Calm Bedtime Companion">
+              </div>
+              <div class="gallery-content">
+                <h3 class="gallery-title">1. Bedtime Companion</h3>
+                <p class="gallery-desc">A warm cream and cocoa plush teddy centered purely on sleep routines, ambient noise, and bedtime anxiety relief. Very soft, but slightly too specific.</p>
+              </div>
+            </div>
+            <!-- Slide 2: Concept 2 -->
+            <div class="gallery-card" id="card-concept-2">
+              <div class="gallery-img-box">
+                <span class="gallery-tag">Stage 2</span>
+                <img src="product_design_images/02-modern-emotional-support-bear.png" alt="Concept 2: Modern Emotional Support Bear">
+              </div>
+              <div class="gallery-content">
+                <h3 class="gallery-title">2. Modern Support Bear</h3>
+                <p class="gallery-desc">Our first step into an AI modern structure with a sleek oat-white and gray palette, chest heart, and teal display. The structure was perfect, but the colors felt cold.</p>
+              </div>
+            </div>
+            <!-- Slide 3: Concept 3 -->
+            <div class="gallery-card" id="card-concept-3">
+              <div class="gallery-img-box">
+                <span class="gallery-tag">Stage 3</span>
+                <img src="product_design_images/03-soft-kawaii-companion.png" alt="Concept 3: Soft Kawaii Companion">
+              </div>
+              <div class="gallery-content">
+                <h3 class="gallery-title">3. Soft Kawaii Companion</h3>
+                <p class="gallery-desc">A warm pastel-blush and cream design focused on charm and bright visual positivity. Highly popular with teens, but slightly too juvenile for therapeutic adult support.</p>
+              </div>
+            </div>
+            <!-- Slide 4: Concept 4 -->
+            <div class="gallery-card" id="card-concept-4">
+              <div class="gallery-img-box">
+                <span class="gallery-tag">Stage 4</span>
+                <img src="product_design_images/04-premium-therapeutic-plush-device.png" alt="Concept 4: Premium Therapeutic Plush Device">
+              </div>
+              <div class="gallery-content">
+                <h3 class="gallery-title">4. Therapeutic Plush</h3>
+                <p class="gallery-desc">An elegant wellness concept boasting high clinical credibility and minimalist design for sensory relief. Felt premium, but missed the traditional teddy warmth.</p>
+              </div>
+            </div>
+            <!-- Slide 5: Standard chosen Concept 5 -->
+            <div class="gallery-card selected-concept" id="card-concept-5">
+              <div class="gallery-img-box">
+                <span class="gallery-tag">Final Direction</span>
+                <img src="product_design_images/05-modern-support-bear-classic-brown-happy-eyes.png" alt="Concept 5: Modern Support Bear in Classic Brown">
+              </div>
+              <div class="gallery-content">
+                <h3 class="gallery-title">5. Classic Brown (Chosen)</h3>
+                <p class="gallery-desc">Our final selected model. Integrates the modern face-screen bezel and paw buttons of Concept 2 into a classic, comforting honey-brown plush body that adults and kids love.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Slider Controls -->
+          <div class="carousel-controls">
+            <button class="carousel-btn" id="carousel-left" aria-label="Previous Design">←</button>
+            <button class="carousel-btn" id="carousel-right" aria-label="Next Design">→</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom CTA A -->
+    <section class="cta-banner layout-a-only">
+      <div class="container">
+        <div class="glass-card cta-card">
+          <h2 class="cta-title">Bring Koda home.</h2>
+          <p class="cta-desc">Join our exclusive pre-order window and be the first to welcome a gentle support companion into your life.</p>
+          <button class="btn-primary open-preorder-btn" id="btn-cta-submit">Pre-Order Now</button>
+          <p class="cta-tagline">Limited First Batch reservation. Est. shipping Late Fall 2026.</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==========================================
+         LAYOUT B ONLY: SENSORY & WELLNESS FOCUS
+         ========================================== -->
+    
+    <!-- Hero B -->
+    <section class="hero-wellness layout-b-only" id="hero-b">
+      <div class="container hero-wellness-centered">
+        <span class="section-tag">A Quiet Space in a Loud World</span>
+        <h1 class="hero-wellness-title">Cozy comfort meets calm companion intelligence.</h1>
+        <p class="hero-wellness-desc">
+          Designed not as a voice assistant or a surveillance speaker, but as a sensory comfort anchor. Koda pairs the traditional emotional reassurance of a weighted plush teddy bear with gentle companion intelligence to help you breathe, wind down, and disconnect.
+        </p>
+        <div class="hero-wellness-actions">
+          <button class="btn-primary open-preorder-btn" id="btn-wellness-hero-primary">Start Your Comfort Journey</button>
+          <span class="cta-microcopy" style="margin-top: 10px;">Free reservation • Ships Late Fall 2026</span>
+        </div>
+        
+        <div class="hero-wellness-image-box">
+          <div class="hero-glowing-backdrop" style="opacity: 0.65;"></div>
+          <!-- Weighted calming scene -->
+          <img src="product_design_images/08-lifestyle-work-stress-breathing.png" alt="Using Koda for stress and breathing support" class="hero-wellness-image">
+        </div>
+      </div>
+    </section>
+
+    <!-- Sensory Benefits Grid B -->
+    <section class="benefits-wellness layout-b-only" id="wellness-features">
+      <div class="container">
+        <span class="section-tag">The Calming Science</span>
+        <h2 class="section-title" style="text-align: center;">Crafted for Calming Sensory Stimulation</h2>
+        <p class="section-subtitle">Every inch of Koda is custom-engineered to engage tactile, thermal, and visual calm, alleviating daily anxiety through physical anchoring.</p>
+        
+        <div class="benefits-grid">
+          <div class="glass-card benefit-card">
+            <h3 class="benefit-card-title">Weighted Calming Core</h3>
+            <p class="benefit-card-desc">Weighted inner sensory glass micro-beads are distributed inside the teddy's lower body, simulating the deep pressure touch (DPT) of a weighted blanket to lower heart rates.</p>
+          </div>
+          
+          <div class="glass-card benefit-card">
+            <h3 class="benefit-card-title">Natural Thermal Warmth</h3>
+            <p class="benefit-card-desc">An inside thermal venting plate runs at a constant, comfortable 98°F, giving the plush cover the lifelike warmth of a real cuddling pet without hot spots.</p>
+          </div>
+          
+          <div class="glass-card benefit-card">
+            <h3 class="benefit-card-title">Guided Pacing Lights</h3>
+            <p class="benefit-card-desc">The glowing chest heart pulses in perfect 4-7-8 breathing cycles. Matching your physical breath to Koda's soft chest glow anchors anxiety during work stress or bedtime.</p>
+          </div>
+          
+          <div class="glass-card benefit-card">
+            <h3 class="benefit-card-title">Zero Clinical Metal</h3>
+            <p class="benefit-card-desc">Constructed with a fabric-first casing, recessed matte bezels, and highly cushioned seams. There are no metallic edges or visible camera lenses to feel intrusive.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom CTA B -->
+    <section class="cta-banner-wellness layout-b-only" style="padding: 100px 0;">
+      <div class="container">
+        <div class="glass-card cta-card-wellness" style="max-width: 800px; margin: 0 auto; text-align: center; padding: 48px;">
+          <h2 class="cta-title" style="font-size: 36px; margin-bottom: 12px;">Restore physical and mental peace.</h2>
+          <p class="cta-desc" style="max-width: 500px; margin: 0 auto 28px auto;">Reserve your sensory support companion today. Limited Fall reservation batch is now open.</p>
+          <button class="btn-primary open-preorder-btn">Reserve My Sensory Bear</button>
+          <p class="cta-tagline" style="margin-top: 16px;">✦ Risk-free reservation • No initial payment required today ✦</p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==========================================
+         LAYOUT C ONLY: DTC HIGH-CONVERSION & SPLIT
+         ========================================== -->
+    
+    <!-- Hero C -->
+    <section class="hero-dtc layout-c-only" id="hero-c">
+      <div class="container hero-dtc-grid">
+        <div class="hero-dtc-content">
+          <span class="hero-dtc-badge">🔥 Limited Pre-Orders Active</span>
+          <h1 class="hero-dtc-headline">A soft companion.<br>A quiet mind.</h1>
+          <p class="hero-dtc-desc">
+            Koda is the world's first soft AI-powered teddy designed to relieve anxiety, establish healthy routines, and protect your privacy. No cameras, no surveillance speakers—just cozy emotional support.
+          </p>
+          
+          <!-- Direct High-converting signup in hero -->
+          <div class="glass-card hero-signup-card">
+            <h3 class="hero-signup-title">Reserve Your First Batch Koda</h3>
+            <p class="hero-signup-desc">Claim your free reservation today (Est. shipping Late Fall 2026). $0 initial down payment.</p>
+            <form class="hero-signup-form" id="dtc-hero-form">
+              <input class="form-input hero-signup-input" type="email" id="dtc-hero-email" placeholder="Enter your email address" required>
+              <button class="btn-primary hero-signup-btn" type="submit">Reserve in 1-Click</button>
+            </form>
+            <div class="hero-signup-trust">✓ 100% Privacy Promised • Free Reservation</div>
+          </div>
+        </div>
+        
+        <div class="hero-dtc-media">
+          <div class="hero-glowing-backdrop"></div>
+          <div class="teddy-container-dtc">
+            <img src="product_design_images/05-modern-support-bear-classic-brown-happy-eyes.png" alt="Classic Brown Modern Support Bear" class="teddy-hero-image">
+            <div class="teddy-glowing-heart-pulse"></div>
+            <!-- DTC Price highlight -->
+            <div class="dtc-price-tag-badge">
+              <span>First Batch Only</span>
+              <strong>$149</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pebble-style Comparison Table C -->
+    <section class="comparison-dtc layout-c-only" id="dtc-comparison">
+      <div class="container">
+        <span class="section-tag" style="display: block; margin: 0 auto 16px auto; width: fit-content;">The Koda Advantage</span>
+        <h2 class="section-title" style="text-align: center;">How Koda Redefines Smart Companionship</h2>
+        <p class="section-subtitle">Most home assistants are rigid, non-huggable speakers designed for surveillance. Classic toys lack active emotional care. Koda merges physical softness with private intellect.</p>
+        
+        <div class="comparison-table-wrapper">
+          <table class="dtc-table">
+            <thead>
+              <tr>
+                <th>Product Feature</th>
+                <th>Standard Smart Speaker</th>
+                <th>Traditional Stuffed Bear</th>
+                <th class="table-koda-col">Koda Support Bear</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Huggability & Comfort</strong></td>
+                <td>❌ Cold hard plastic</td>
+                <td>✓ Soft but static</td>
+                <td class="table-koda-col">✓ weighted & ultra-soft</td>
+              </tr>
+              <tr>
+                <td><strong>Active Listening & Support</strong></td>
+                <td>✓ Conversational</td>
+                <td>❌ Silent</td>
+                <td class="table-koda-col">✓ Warm, calm intelligence</td>
+              </tr>
+              <tr>
+                <td><strong>100% Camera-Free</strong></td>
+                <td>❌ surveillance threat</td>
+                <td>✓ Safe</td>
+                <td class="table-koda-col">✓ 100% Camera-Free Promise</td>
+              </tr>
+              <tr>
+                <td><strong>Physical Mic Disconnect</strong></td>
+                <td>❌ Virtual setting only</td>
+                <td>✓ Safe</td>
+                <td class="table-koda-col">✓ Physical tactile paw button</td>
+              </tr>
+              <tr>
+                <td><strong>Guided Sensory Calming</strong></td>
+                <td>❌ Noisy alerts</td>
+                <td>❌ No interaction</td>
+                <td class="table-koda-col">✓ Pulses breathing lights</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bundle Pricing Selector C -->
+    <section class="pricing-dtc layout-c-only" id="dtc-bundles">
+      <div class="container">
+        <span class="section-tag">Limited Pre-Order Bundles</span>
+        <h2 class="section-title">Select Your Pre-Order Bundle</h2>
+        <p class="section-subtitle">No payment is required today. Select a bundle below to lock in your discount pricing for late Fall shipping.</p>
+        
+        <div class="bundles-grid">
+          <!-- Bundle 1 -->
+          <div class="glass-card bundle-box">
+            <span class="bundle-badge">Most Popular</span>
+            <h3 class="bundle-name">Bedside Companion (12")</h3>
+            <p class="bundle-tagline">Perfect size for desk, nightstand, and cuddling.</p>
+            <div class="bundle-price">
+              <span class="price-amount">$149</span>
+              <span class="price-discount">Save $30 (MSRP $179)</span>
+            </div>
+            <ul class="bundle-bullets">
+              <li>✦ Weighted Calming Core inside</li>
+              <li>✦ 98°F Natural Body Heat emulated</li>
+              <li>✦ Physical microphone paw button</li>
+              <li>✦ ASTM F963 Toy Safety certified</li>
+            </ul>
+            <button class="btn-primary open-preorder-btn" style="width: 100%;">Reserve Bedside Bear</button>
+          </div>
+          
+          <!-- Bundle 2 -->
+          <div class="glass-card bundle-box">
+            <h3 class="bundle-name">Travel Companion (8")</h3>
+            <p class="bundle-tagline">Compact, travel-ready with an integrated shoulder strap.</p>
+            <div class="bundle-price">
+              <span class="price-amount">$99</span>
+              <span class="price-discount">Save $20 (MSRP $119)</span>
+            </div>
+            <ul class="bundle-bullets">
+              <li>✦ Lightweight compact sensory plush</li>
+              <li>✦ Built-in flexible travel pack strap</li>
+              <li>✦ Local offline-memory companion mode</li>
+              <li>✦ Fully machine-washable shell</li>
+            </ul>
+            <button class="btn-primary open-preorder-btn" style="width: 100%;">Reserve Travel Bear</button>
+          </div>
+          
+          <!-- Bundle 3 -->
+          <div class="glass-card bundle-box" style="border-color: var(--accent);">
+            <span class="bundle-badge" style="background: var(--accent); color: #000;">Best Value</span>
+            <h3 class="bundle-name">Comfort Suite Bundle</h3>
+            <p class="bundle-tagline">Get both companions—one for the home and one for the road.</p>
+            <div class="bundle-price">
+              <span class="price-amount">$219</span>
+              <span class="price-discount">Save $79 (Combined MSRP $298)</span>
+            </div>
+            <ul class="bundle-bullets">
+              <li>✦ 1x Bedside Companion Bear (12")</li>
+              <li>✦ 1x Travel Companion Bear (8")</li>
+              <li>✦ Free Premium Travel Casing included</li>
+              <li>✦ Lifetime offline local AI core upgrade</li>
+            </ul>
+            <button class="btn-primary open-preorder-btn" style="width: 100%;">Reserve Comfort Suite</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==========================================
+         SHARED INTERACTIVE BLOCKS (Across Layouts)
+         ========================================== -->
+
+    <!-- Face Simulator (Shared) -->
+    <section class="simulator" id="simulator">
+      <div class="container">
+        <span class="section-tag">Interactive Preview</span>
+        <h2 class="section-title">An Expressive Face Screen</h2>
+        <p class="section-subtitle">Koda communicates emotion, support, and routines through warm symbolic expressions, avoiding realistic facial features to build trust and calm.</p>
+        
+        <div class="simulator-grid">
+          <div class="sim-interface">
+            <div class="sim-display-bezel">
+              <div class="sim-screen">
+                <div class="sim-screen-glow" id="screen-glow" style="background: radial-gradient(circle, rgba(249, 172, 47, 0.4) 0%, rgba(0,0,0,0) 70%);"></div>
+                
+                <svg class="sim-screen-svg" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg" id="screen-svg">
+                  <g id="screen-shapes">
+                    <path class="screen-element" d="M 45,65 Q 60,50 75,65" stroke="var(--accent)" stroke-width="8" stroke-linecap="round" fill="none" />
+                    <path class="screen-element" d="M 125,65 Q 140,50 155,65" stroke="var(--accent)" stroke-width="8" stroke-linecap="round" fill="none" />
+                  </g>
+                </svg>
+              </div>
+            </div>
+            
+            <div class="sim-controls">
+              <button class="sim-btn active" data-mode="companion" id="btn-mode-companion">
+                <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                Companion
+              </button>
+              <button class="sim-btn" data-mode="calm" id="btn-mode-calm">
+                <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"></path><path d="M12 6v6l4 2"></path></svg>
+                Calm
+              </button>
+              <button class="sim-btn" data-mode="weather" id="btn-mode-weather">
+                <svg viewBox="0 0 24 24"><path d="M12 2v2M4.93 4.93l1.41 1.41M20 12h2M17.66 6.34l1.41-1.41M12 20v2M6.34 17.66l-1.41 1.41M2 12h2M19.07 19.07l-1.41-1.41M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0z"></path></svg>
+                Weather
+              </button>
+              <button class="sim-btn" data-mode="bedtime" id="btn-mode-bedtime">
+                <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                Bedtime
+              </button>
+              <button class="sim-btn" data-mode="muted" id="btn-mode-muted">
+                <svg viewBox="0 0 24 24"><line x1="1" y1="1" x2="23" y2="23"></line><path d="M9 9v3a3 3 0 0 0 5.12 2.12M15 9.34V4a3 3 0 0 0-5.94-.6"></path><path d="M17 16.95A7 7 0 0 1 5 12v-2m14 0v2a7 7 0 0 1-.11 1.23"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg>
+                Muted
+              </button>
+            </div>
+          </div>
+          
+          <div class="sim-desc-card">
+            <h3 class="sim-desc-title" id="sim-title">
+              <span>Companion Mode</span>
+              <span class="sim-desc-badge" id="sim-badge">Active Listening</span>
+            </h3>
+            <p class="sim-desc-text" id="sim-text">
+              In Companion Mode, Koda's display shows soft crescent eyes indicating comfort and conversational engagement. Koda listens gently, responds in a calm tone, and uses conversational memory to remember your preferences and daily routines.
+            </p>
+            <div class="sim-quote-box" id="sim-quote" style="margin-bottom: 24px;">
+              "I'm here. I'm listening. How was your day?"
+            </div>
+            <div class="cta-block-inline" style="align-items: flex-start; margin-top: 24px;">
+              <button class="btn-primary open-preorder-btn" id="btn-sim-cta">Start My Comfort Journey</button>
+              <span class="cta-microcopy">Free reservation • No payment details required</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Privacy Spotlight (Shared) -->
+    <section class="privacy" id="privacy">
+      <div class="container">
+        <div class="glass-card privacy-card">
+          <div class="privacy-image-wrapper">
+            <img src="product_design_images/10-product-detail-privacy-button-muted.png" alt="Physical tactile microphone privacy disconnect button on Koda's paw">
+          </div>
+          <div class="privacy-content">
+            <span class="section-tag" style="background: hsl(350, 85%, 60%, 0.08); color: var(--accent-heart); border-color: hsl(350, 85%, 60%, 0.15)">Absolute Trust</span>
+            <h2 class="section-title">Privacy is not a setting.<br>It's a physical button.</h2>
+            <p class="section-subtitle" style="margin: 0 0 24px 0; text-align: left;">Unlike modern home speakers or virtual mobile assistants that listen constantly in the background, Koda puts hardware-level security and trust directly in your hands.</p>
+            
+            <div class="privacy-pill-list">
+              <div class="privacy-pill-item">
+                <div class="privacy-icon-wrapper" style="background: hsl(350, 85%, 60%, 0.1); color: var(--accent-heart);">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                </div>
+                <div>
+                  <h4>Tactile Paw Disconnect</h4>
+                  <p>A tactile, physical button is sewn into Koda's left paw pad. With a single click, you physically disconnect the microphone circuits at a hardware level.</p>
+                </div>
+              </div>
+              
+              <div class="privacy-pill-item">
+                <div class="privacy-icon-wrapper" style="background: hsl(350, 85%, 60%, 0.1); color: var(--accent-heart);">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                </div>
+                <div>
+                  <h4>100% Camera-Free</h4>
+                  <p>Koda is built without a camera. There are no hidden lenses, no surveillance features, and no tracking. Just warm, supportive companionship.</p>
+                </div>
+              </div>
+              
+              <div class="privacy-pill-item" style="margin-bottom: 24px;">
+                <div class="privacy-icon-wrapper" style="background: hsl(350, 85%, 60%, 0.1); color: var(--accent-heart);">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.25V7.5a4.75 4.75 0 0 0-9.5 0V10H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2zM8.75 7.5a3.25 3.25 0 0 1 6.5 0V10h-6.5V7.5z"></path></svg>
+                </div>
+                <div>
+                  <h4>Visible Status Indicators</h4>
+                  <p>Whenever Koda is muted, a hardware-controlled icon displays prominently on the face screen. You always know exactly when Koda is offline.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="cta-block-inline" style="align-items: flex-start;">
+              <button class="btn-primary open-preorder-btn" id="btn-privacy-cta">Reserve Privacy-First Companion</button>
+              <span class="cta-microcopy">Secure your reservation • Ships Fall 2026</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Safety & Quality (Shared) -->
+    <section class="safety" id="safety">
+      <div class="container">
+        <span class="section-tag">Quality Engineering</span>
+        <h2 class="section-title">Designed for Hugs, Engineered for Safety</h2>
+        <p class="section-subtitle">Since Koda is built to be held, squeezed, and kept close, we hold our physical components to the highest toy-safety and hardware guidelines.</p>
+        
+        <div class="safety-grid">
+          <div class="glass-card safety-box">
+            <div class="safety-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </div>
+            <h3 class="safety-title">Toy Certified (ASTM F963)</h3>
+            <p class="safety-text">Fully designed to meet international toy safety specifications, ensuring durable seams, flame-resistant fabrics, and no small parts for child and family security.</p>
+          </div>
+          
+          <div class="glass-card safety-box">
+            <div class="safety-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+            </div>
+            <h3 class="safety-title">Advanced Thermal Venting</h3>
+            <p class="safety-text">The display, processors, and batteries are surrounded by a soft-felt heat-dissipation casing, ensuring the bear remains warm, soft, and completely cool to the touch.</p>
+          </div>
+          
+          <div class="glass-card safety-box">
+            <div class="safety-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 0 1 10 10c0 5.523-4.477 10-10 10S2 17.523 2 12a10 10 0 0 1 10-10z"></path><path d="M12 6v6l4 2"></path></svg>
+            </div>
+            <h3 class="safety-title">Washable Exterior Shell</h3>
+            <p class="safety-text">Koda is engineered with a modular zip-open back. Simply slip out the cushioned technical processor core and wash the plush fabric cover like a standard stuffed animal.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Accordion (Shared) -->
+    <section class="faq" id="faq">
+      <div class="container">
+        <span class="section-tag">Common Inquiries</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle">Have questions about how Koda's AI operates or how safety is handled? We have answers.</p>
+        
+        <div class="faq-wrapper">
+          <!-- FAQ 1 -->
+          <div class="faq-item">
+            <div class="faq-header">
+              <h3 class="faq-question">How does Koda's AI memory operate?</h3>
+              <svg class="faq-icon" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            </div>
+            <div class="faq-content">
+              <div class="faq-answer">
+                Koda's conversational history is securely encrypted. By default, Koda stores your companion data locally on its built-in solid-state module. If you opt-in, Koda can securely sync companion memory to your personal cloud so it remains consistent across multiple sizes or device replacements, giving you 100% control to view or delete data at any time.
+              </div>
+            </div>
+          </div>
+          
+          <!-- FAQ 2 -->
+          <div class="faq-item">
+            <div class="faq-header">
+              <h3 class="faq-question">Is Koda safe for children and toddler use?</h3>
+              <svg class="faq-icon" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            </div>
+            <div class="faq-content">
+              <div class="faq-answer">
+                Yes! While Koda is extremely popular with young women and sensitive adults, Koda meets all stringent CPSC age-determination and ASTM F963 toy safety regulations. An optional parent-control app is available to lock child profiles, filter conversations, and enforce strictly offline, local-only support modes.
+              </div>
+            </div>
+          </div>
+          
+          <!-- FAQ 3 -->
+          <div class="faq-item">
+            <div class="faq-header">
+              <h3 class="faq-question">Does Koda require constant Wi-Fi connectivity?</h3>
+              <svg class="faq-icon" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            </div>
+            <div class="faq-content">
+              <div class="faq-answer">
+                No. Koda has a local offline-processor that handles breathing cues, basic bedtime soundscapes, visual screens, and a small library of supportive comforting remarks. Advanced conversational features and weather/security reminders require Wi-Fi connectivity.
+              </div>
+            </div>
+          </div>
+          
+          <!-- FAQ 4 -->
+          <div class="faq-item">
+            <div class="faq-header">
+              <h3 class="faq-question">What sizes are available for pre-order?</h3>
+              <svg class="faq-icon" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            </div>
+            <div class="faq-content">
+              <div class="faq-answer">
+                We are launching with two premium physical sizes:
+                <br>1. **Bedside Companion (12 inches):** The perfect size for sitting on your nightstand, desk, or holding securely during stressful moments (default).
+                <br>2. **Travel Companion (8 inches):** A lighter, compact size equipped with an integrated travel strap—perfect for carrying inside backpacks and taking on long flights or trips.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="faq-item">
+            <div class="faq-header">
+              <h3 class="faq-question">Can I wash Koda's plush teddy cover?</h3>
+              <svg class="faq-icon" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            </div>
+            <div class="faq-content">
+              <div class="faq-answer">
+                Yes! Koda is engineered with a modular zip-open back. Simply slide open the hidden zipper, slip out the cushioned technical processor core and batteries, and wash the soft fabric teddy cover in a standard washing machine (gentle cycle, cold water). Lay flat to dry, then slide the core back in.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 6 -->
+          <div class="faq-item">
+            <div class="faq-header">
+              <h3 class="faq-question">How does the weighted sensory core support anxiety?</h3>
+              <svg class="faq-icon" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            </div>
+            <div class="faq-content">
+              <div class="faq-answer">
+                Koda features an integrated weighted lower core containing hypoallergenic glass micro-beads. This simulates Deep Pressure Touch (DPT)—the same clinical mechanism utilized in weighted blankets and deep-pressure therapy. The weighted pressure triggers the release of serotonin and dopamine while reducing cortisol (stress hormones), aiding physical calm during panic moments or before sleep.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================
+       FOOTER (Shared)
+       ========================================== -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo">
+          <div class="logo-icon"></div>
+          <span>Koda</span>
+        </a>
+        <p>A gentle comfort object that gained a heart, custom engineered for emotional reassurance, healthy habits, and absolute privacy.</p>
+      </div>
+      <div>
+        <h4 class="footer-nav-title">Navigation</h4>
+        <ul class="footer-nav-links">
+          <li><a href="#simulator" class="footer-nav-link">Face Simulator</a></li>
+          <li><a href="#privacy" class="footer-nav-link">Privacy Standards</a></li>
+          <li><a href="#safety" class="footer-nav-link">Safety Standards</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-nav-title">Company</h4>
+        <ul class="footer-nav-links">
+          <li><a href="#" class="footer-nav-link">About Us</a></li>
+          <li><a href="#" class="footer-nav-link">Safety Standards</a></li>
+          <li><a href="#" class="footer-nav-link">Contact Support</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-copyright">
+      <div>© 2026 Koda AI Inc. All rights reserved.</div>
+      <div class="footer-legal-links">
+        <a href="#" class="footer-nav-link">Privacy Policy</a>
+        <a href="#" class="footer-nav-link">Terms of Service</a>
+        <a href="#" class="footer-nav-link">COPPA Compliance</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================
+       PRE-ORDER MODAL DIALOG
+       ========================================== -->
+  <div class="modal-backdrop" id="preorder-modal">
+    <div class="glass-card modal-box">
+      <button class="modal-close" id="modal-close-btn">✕</button>
+      
+      <!-- Signup Screen -->
+      <div id="modal-signup-screen">
+        <h3 class="modal-title">Reserve Your Koda</h3>
+        <p class="modal-desc">Secure your place in our limited first production run (shipping Late Fall 2026). No initial payment required today.</p>
+        
+        <form class="modal-form" id="preorder-form">
+          <div class="form-group">
+            <label class="form-label" for="form-name">Your Full Name</label>
+            <input class="form-input" type="text" id="form-name" placeholder="Alex Morgan" required>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="form-email">Email Address</label>
+            <input class="form-input" type="email" id="form-email" placeholder="alex@example.com" required>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="form-size">Select Size Preference</label>
+            <select class="form-input" id="form-size" style="background-color: var(--bg-primary); border-color: var(--border-color-hover);">
+              <option value="bedside" style="background-color: var(--bg-primary)">Bedside Companion (12") - $149</option>
+              <option value="travel" style="background-color: var(--bg-primary)">Travel Companion (8") - $99</option>
+            </select>
+          </div>
+          
+          <button class="btn-primary" type="submit" style="margin-top: 8px;">Complete Free Reservation</button>
+        </form>
+      </div>
+
+      <!-- Success Screen -->
+      <div id="modal-success-screen" class="modal-success-screen">
+        <div class="modal-success-icon">✓</div>
+        <h3 class="modal-title">Reservation Confirmed!</h3>
+        <p class="modal-desc" style="margin-top: 8px;">Thank you, <span id="success-name" style="font-weight: 600; color: var(--accent);">Alex</span>! We have reserved your Koda. We will email updates regarding manufacturing progress to <span id="success-email" style="font-weight: 500;">alex@example.com</span>.</p>
+        <button class="btn-secondary" id="modal-done-btn" style="margin-top: 16px; width: 100%;">Return to Page</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       FLOATING CONFIGURATION WIDGETS
+       ========================================== -->
+  <div class="theme-widget-wrapper" style="bottom: 24px; right: 24px; display: flex; gap: 14px; flex-direction: row; align-items: flex-end;">
+    
+    <!-- Widget 1: Layout Selector -->
+    <div class="layout-widget-container" style="display: flex; flex-direction: column; align-items: flex-end; position: relative;">
+      <!-- Collapsible selector panel -->
+      <div class="theme-panel" id="layout-selection-panel">
+        <h4 class="theme-panel-title">Explore Landing Layouts</h4>
+        <div class="theme-options">
+          <button class="theme-option-btn active" data-layout="a" id="btn-layout-a">
+            <span>A: Interactive Story</span>
+            <span style="font-size: 10px; opacity: 0.65; font-weight: 400;">Product Focus</span>
+          </button>
+          <button class="theme-option-btn" data-layout="b" id="btn-layout-b">
+            <span>B: Wellness Focus</span>
+            <span style="font-size: 10px; opacity: 0.65; font-weight: 400;">Science & Sensory</span>
+          </button>
+          <button class="theme-option-btn" data-layout="c" id="btn-layout-c">
+            <span>C: Direct DTC</span>
+            <span style="font-size: 10px; opacity: 0.65; font-weight: 400;">Split Column & Table</span>
+          </button>
+        </div>
+      </div>
+      
+      <!-- Floating toggle button -->
+      <button class="theme-widget-toggle" id="layout-panel-toggle" aria-label="Choose Layout" style="background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 22px; height: 22px;"><rect x="3" y="3" width="7" height="9"></rect><rect x="14" y="3" width="7" height="5"></rect><rect x="14" y="12" width="7" height="9"></rect><rect x="3" y="16" width="7" height="5"></rect></svg>
+      </button>
+    </div>
+
+    <!-- Widget 2: Theme Selector -->
+    <div class="theme-widget-container" style="display: flex; flex-direction: column; align-items: flex-end; position: relative;">
+      <!-- Collapsible selector panel -->
+      <div class="theme-panel" id="theme-selection-panel">
+        <h4 class="theme-panel-title">Explore Design Palettes</h4>
+        <div class="theme-options">
+          <button class="theme-option-btn active" data-theme="cocoa" id="btn-theme-cocoa">
+            <span>Cozy Cocoa</span>
+            <div class="theme-indicator-swatch swatch-cocoa">
+              <div class="swatch-bg"></div>
+              <div class="swatch-acc"></div>
+            </div>
+          </button>
+          <button class="theme-option-btn" data-theme="oat" id="btn-theme-oat">
+            <span>Nordic Oat</span>
+            <div class="theme-indicator-swatch swatch-oat">
+              <div class="swatch-bg"></div>
+              <div class="swatch-acc"></div>
+            </div>
+          </button>
+          <button class="theme-option-btn" data-theme="blush" id="btn-theme-blush">
+            <span>Blush Kawaii</span>
+            <div class="theme-indicator-swatch swatch-blush">
+              <div class="swatch-bg"></div>
+              <div class="swatch-acc"></div>
+            </div>
+          </button>
+          <button class="theme-option-btn" data-theme="zen" id="btn-theme-zen">
+            <span>Zen Therapy</span>
+            <div class="theme-indicator-swatch swatch-zen">
+              <div class="swatch-bg"></div>
+              <div class="swatch-acc"></div>
+            </div>
+          </button>
+        </div>
+      </div>
+      
+      <!-- Floating toggle button -->
+      <button class="theme-widget-toggle" id="theme-panel-toggle" aria-label="Choose Theme">
+        <svg viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
+      </button>
+    </div>
+
+  </div>
+
+  <!-- ==========================================
+       STICKY BOTTOM CTA BAR (Shared)
+       ========================================== -->
+  <div class="sticky-cta-bar" id="sticky-bottom-bar">
+    <div class="sticky-cta-info">
+      <span class="sticky-cta-title">Koda Companion</span>
+      <span class="sticky-cta-badge">Free Reservation</span>
+    </div>
+    <div class="sticky-cta-actions">
+      <span class="cta-microcopy" style="margin: 0; padding: 0;">Ships Fall 2026</span>
+      <button class="btn-primary sticky-cta-btn open-preorder-btn" id="btn-sticky-cta">Reserve Your Koda</button>
+    </div>
+  </div>
+
+  <!-- Client-side Logic Script -->
+  <script src="index.js" defer></script>
+</body>
+</html>
