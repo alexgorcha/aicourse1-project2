@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://alexgorcha.github.io/aicourse1-project2/sitemap.xml
