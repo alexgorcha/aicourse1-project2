@@ -567,6 +567,14 @@ select:focus-visible,
   pointer-events: none;
 }
 
+#hero-heart-pulse {
+  bottom: 36%;
+  left: 47%;
+  width: 21px;
+  height: 21px;
+  animation-name: pulse-heart-dtc;
+}
+
 @keyframes pulse-heart {
   0% {
     transform: translateX(-50%) scale(0.95);
